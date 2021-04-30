@@ -6,10 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.WelcomeFragmentBinding
 
 class WelcomeFragment: Fragment() {
+
+    private lateinit var viewModel: WelcomeViewModel
+    private lateinit var viewModelFactory: WelcomeViewModelFactory
 
     private lateinit var binding: WelcomeFragmentBinding
 
@@ -24,6 +30,30 @@ class WelcomeFragment: Fragment() {
             container,
             false)
 
+        val username = arguments?.getString("username") ?: "User"
+
+        viewModelFactory = WelcomeViewModelFactory(username)
+        viewModel = ViewModelProvider(this, viewModelFactory)
+            .get(WelcomeViewModel::class.java)
+
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        viewModel.eventContinue.observe(viewLifecycleOwner, Observer { shouldContinue ->
+            if (shouldContinue) {
+                navigateToInstructions()
+                viewModel.onContinueCompleted()
+            }
+        })
+
+        binding.continueButton.setOnClickListener {
+            viewModel.pressedButton()
+        }
+
         return binding.root
+    }
+
+    private fun navigateToInstructions() {
+        findNavController().navigate(R.id.instructionsFragment)
     }
 }

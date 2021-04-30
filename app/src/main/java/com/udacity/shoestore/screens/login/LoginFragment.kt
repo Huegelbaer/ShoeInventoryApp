@@ -98,7 +98,9 @@ class LoginFragment: Fragment() {
     }
 
     private fun navigateToWelcome() {
-        findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+        val username = binding.editEmailAddress.text.toString()
+        val directions = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment(username)
+        findNavController().navigate(directions)
     }
 
 }
