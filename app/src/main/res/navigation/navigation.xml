@@ -8,7 +8,7 @@
         android:name="com.udacity.shoestore.screens.login.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_welcomeFragment2"
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
@@ -16,7 +16,7 @@
         android:name="com.udacity.shoestore.screens.welcome.WelcomeFragment"
         android:label="WelcomeFragment" >
         <action
-            android:id="@+id/action_welcomeFragment_to_instructionsFragment2"
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment" />
     </fragment>
     <fragment

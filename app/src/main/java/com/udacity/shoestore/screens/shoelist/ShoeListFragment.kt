@@ -25,6 +25,6 @@ class ShoeListFragment : Fragment() {
             container,
             false)
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 }
