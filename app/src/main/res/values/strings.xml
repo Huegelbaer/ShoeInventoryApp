@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Shoe Inventory App</string>
+    <string name="email_adresse">E-mail Adresse</string>
+    <string name="enter_email_adresse">Enter E-mail Adresse</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_button_title">Continue</string>
+    <string name="instruction_text">Accusantium rerum tempora et hic labore at enim aspernatur dolor repudiandae reiciendis. Excepturi impedit deleniti voluptas ut. Vel aut dolores inventore labore quia id et quis ducimus voluptatem. Quasi corporis occaecati illum et voluptate ut neque doloremque odit voluptatem et ad. Atque saepe rerum doloremque cumque ab labore ratione consequatur provident voluptas illo. Qui pariatur non eum id cumque neque quos ea aut ut aliquam explicabo. Repellendus et autem officiis iure et quia nesciunt unde nihil et totam a sit accusamus quia. Nihil nostrum et qui autem at non soluta eligendi officiis dolorem aut. Accusantium eligendi aliquid dignissimos ab qui.</string>
+    <string name="instruction_title">Eaque Rem Iste Aliquam</string>
+    <string name="instruction_button_title">Continue</string>
+    <string name="shoe_name">Shoe name</string>
+    <string name="edit_shoe_name_hint">Enter shoe name</string>
+    <string name="company_name">Company name</string>
+    <string name="edit_company_name_hint">Enter company name</string>
+    <string name="shoe_size">Shoe size</string>
+    <string name="edit_shoe_size_hint">Enter shoe size</string>
+    <string name="description">Description</string>
+    <string name="edit_description_hint">Enter description</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
 </resources>
