@@ -8,10 +8,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
+import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 
 class ShoeListFragment : Fragment() {
 
-    private lateinit var binding: ShoeDetailFragmentBinding
+    private lateinit var binding: ShoeListFragmentBinding
 
 
     override fun onCreateView(
