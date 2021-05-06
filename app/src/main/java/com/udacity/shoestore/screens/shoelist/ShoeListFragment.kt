@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
@@ -41,13 +42,17 @@ class ShoeListFragment : Fragment() {
         }
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
-          // addListItem(it)
+            removeAllListItems()
             for (shoe in it) {
                 addListItem(shoe)
             }
         })
 
         return binding.root
+    }
+
+    private fun removeAllListItems() {
+        binding.linearLayout.removeAllViews()
     }
 
     private fun addListItem(shoe: Shoe) {
