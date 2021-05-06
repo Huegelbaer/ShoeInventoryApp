@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
+import com.udacity.shoestore.screens.shoelist.ShoeViewModel
 
 class ShoeDetailsFragment: Fragment() {
 
+    private val viewModel: ShoeViewModel by activityViewModels()
     private lateinit var binding: ShoeDetailFragmentBinding
 
     override fun onCreateView(
@@ -24,6 +29,27 @@ class ShoeDetailsFragment: Fragment() {
             container,
             false)
 
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        viewModel.detailsEvent.observe(viewLifecycleOwner, Observer { event ->
+            when (event) {
+                ShoeViewModel.DetailsEvent.SAVE -> {
+                    navigateToList()
+                    viewModel.onDetailsEventCompleted()
+                }
+                ShoeViewModel.DetailsEvent.CANCEL -> {
+                    navigateToList()
+                    viewModel.onDetailsEventCompleted()
+                }
+                else -> {}
+            }
+        })
+
         return binding.root
+    }
+
+    private fun navigateToList() {
+        findNavController().navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
     }
 }
