@@ -58,6 +58,12 @@ class ShoeListFragment : Fragment() {
     private fun addListItem(shoe: Shoe) {
         val subView = TextView(context)
         subView.text = shoe.name
+
+        subView.setOnClickListener {
+            val directions = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(shoe)
+            findNavController().navigate(directions)
+        }
+
         binding.linearLayout.addView(subView)
     }
 }
