@@ -50,6 +50,12 @@
         <item name="android:textColor">@color/textColorSecondary</item>
     </style>
 
+    <style name="ErrorMessageStyle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/errorTextColor</item>
+    </style>
+
     <style name="ButtonStyle" parent="Widget.AppCompat.Button.Colored">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

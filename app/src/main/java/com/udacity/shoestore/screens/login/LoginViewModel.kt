@@ -16,13 +16,19 @@ class LoginViewModel: ViewModel() {
         get() = _eventAuthenfication
 
     fun loginUser(username: String, password: String) {
-        Timber.d("login user with $username and $password")
-        _eventAuthenfication.value = AuthenficationState.SUCCECCED
+        if (username.isEmpty() || password.isEmpty()) {
+            _eventAuthenfication.value = AuthenficationState.FAILED
+        } else {
+            _eventAuthenfication.value = AuthenficationState.SUCCECCED
+        }
     }
 
     fun registerUser(username: String, password: String) {
-        Timber.d("register user with $username and $password")
-        _eventAuthenfication.value = AuthenficationState.SUCCECCED
+        if (username.isEmpty() || password.isEmpty()) {
+            _eventAuthenfication.value = AuthenficationState.FAILED
+        } else {
+            _eventAuthenfication.value = AuthenficationState.SUCCECCED
+        }
     }
 
     fun onAuthenficationCompleted() {

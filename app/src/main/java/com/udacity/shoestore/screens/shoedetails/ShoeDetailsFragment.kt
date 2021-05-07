@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -43,6 +44,10 @@ class ShoeDetailsFragment: Fragment() {
                     navigateToList()
                     viewModel.onDetailsEventCompleted()
                 }
+                ShoeViewModel.DetailsEvent.ERROR -> {
+                    handleError()
+                    viewModel.onDetailsEventCompleted()
+                }
                 else -> {}
             }
         })
@@ -61,5 +66,20 @@ class ShoeDetailsFragment: Fragment() {
 
     private fun navigateToList() {
         findNavController().navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
+    }
+
+    private fun handleError() {
+        setErrorIfEmpty(binding.editShoeName)
+        setErrorIfEmpty(binding.editCompanyName)
+        setErrorIfEmpty(binding.editShoeSize)
+        setErrorIfEmpty(binding.editDescription)
+    }
+
+    private fun setErrorIfEmpty(editView: EditText) {
+        if (editView.text.isEmpty()) {
+            editView.error = getString(R.string.shoe_details_empty_input_error)
+        } else {
+            editView.error = null
+        }
     }
 }

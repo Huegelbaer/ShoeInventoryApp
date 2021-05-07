@@ -82,18 +82,18 @@ class LoginFragment: Fragment() {
             LoginViewModel.AuthenficationState.FAILED -> {
                 handleAuthenficationFailed()
             }
-            else -> {
-
-            }
+            else -> { }
         }
     }
 
     private fun handleAuthenficationSucceded() {
+        binding.errorLabel.visibility = View.GONE
         navigateToWelcome()
         viewModel.onAuthenficationCompleted()
     }
 
     private fun handleAuthenficationFailed() {
+        binding.errorLabel.visibility = View.VISIBLE
         viewModel.onAuthenficationCompleted()
     }
 

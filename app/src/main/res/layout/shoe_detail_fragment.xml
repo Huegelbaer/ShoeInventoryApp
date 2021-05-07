@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/medium_spacing"
             android:hint="@string/edit_shoe_size_hint"
+            android:text="@{`` + viewModel.selected.size}"
             android:inputType="number"
             app:layout_constraintBottom_toTopOf="@+id/description"
             app:layout_constraintEnd_toEndOf="parent"

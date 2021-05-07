@@ -11,21 +11,21 @@
 
         <TextView
             android:id="@+id/emailAddresse"
+            style="@style/SubheadStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email_address"
             app:layout_constraintBottom_toTopOf="@+id/editEmailAddress"
-            app:layout_constraintEnd_toEndOf="@+id/editEmailAddress"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editEmailAddress"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            style="@style/SubheadStyle" />
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
             android:id="@+id/editEmailAddress"
+            style="@style/InputTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_spacing"
             android:hint="@string/enter_email_address"
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/password"
@@ -33,59 +33,71 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailAddresse"
-            style="@style/InputTextViewStyle" />
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/password"
+            style="@style/SubheadStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_spacing"
             android:text="@string/password"
             app:layout_constraintBottom_toTopOf="@+id/editPassword"
-            app:layout_constraintEnd_toEndOf="@+id/editPassword"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editPassword"
             app:layout_constraintTop_toBottomOf="@+id/editEmailAddress"
-            style="@style/SubheadStyle" />
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
             android:id="@+id/editPassword"
+            style="@style/InputTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_spacing"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            app:layout_constraintBottom_toTopOf="@+id/loginButton"
+            app:layout_constraintBottom_toTopOf="@+id/errorLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password"
-            style="@style/InputTextViewStyle" />
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/errorLabel"
+            style="@style/ErrorMessageStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/large_spacing"
+            android:text="@string/login_error"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/registrationButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPassword"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/loginButton"
+            style="@style/ButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_spacing"
             android:text="@string/sign_in"
-            app:layout_constraintBottom_toTopOf="@+id/registrationButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPassword"
-            style="@style/ButtonStyle" />
+            app:layout_constraintStart_toEndOf="@+id/registrationButton"
+            app:layout_constraintTop_toTopOf="@+id/registrationButton" />
 
         <Button
             android:id="@+id/registrationButton"
+            style="@style/BorderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_spacing"
             android:text="@string/sign_up"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/loginButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/loginButton"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            style="@style/BorderlessButtonStyle" />
+            app:layout_constraintEnd_toStartOf="@+id/loginButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/errorLabel"
+            app:layout_constraintVertical_chainStyle="packed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

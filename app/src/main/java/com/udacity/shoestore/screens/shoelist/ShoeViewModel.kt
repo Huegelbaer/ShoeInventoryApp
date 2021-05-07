@@ -14,7 +14,7 @@ class ShoeViewModel: ViewModel() {
     }
 
     enum class DetailsEvent {
-        CANCEL, SAVE, NONE
+        CANCEL, SAVE, ERROR, NONE
     }
 
     private var _shoeList = MutableLiveData<ArrayList<Shoe>>(emptyShoeList())
@@ -49,13 +49,11 @@ class ShoeViewModel: ViewModel() {
     }
 
     fun onSave() {
-        val list = (_shoeList.value ?: emptyShoeList())
-        if (_selectedIndex < 0) {
-            list.add(selected)
-        } else {
-            list[_selectedIndex] = selected
+        if (!isShoeDataValid()) {
+            _detailsEvent.value = DetailsEvent.ERROR
+            return
         }
-        _shoeList.value = list
+        updateList()
         _detailsEvent.value = DetailsEvent.SAVE
     }
 
@@ -65,6 +63,23 @@ class ShoeViewModel: ViewModel() {
 
     fun onDetailsEventCompleted() {
         _detailsEvent.value = DetailsEvent.NONE
+    }
+
+    private fun isShoeDataValid(): Boolean {
+        if (selected.name.isEmpty() || selected.company.isEmpty() || selected.description.isEmpty()) {
+            return false
+        }
+        return true
+    }
+
+    private fun updateList() {
+        val list = (_shoeList.value ?: emptyShoeList())
+        if (_selectedIndex < 0) {
+            list.add(selected)
+        } else {
+            list[_selectedIndex] = selected
+        }
+        _shoeList.value = list
     }
 
     private fun emptyShoeList(): ArrayList<Shoe> {
