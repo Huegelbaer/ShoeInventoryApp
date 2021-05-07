@@ -26,15 +26,15 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setupWithNavController(navController, appBarConfiguration)
         setSupportActionBar(toolbar)
-    }
 
+        NavigationUI.setupActionBarWithNavController(this, navController)
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -46,9 +46,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return getNavController().navigateUp()
+    }
+
     private fun navigateToLogin() {
-        val navController = getNavController()
-        navController.popBackStack(R.id.loginFragment, false)
+        getNavController().popBackStack(R.id.loginFragment, false)
     }
 
     private fun getNavController(): NavController {
