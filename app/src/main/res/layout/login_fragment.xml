@@ -6,13 +6,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium_spacing">
 
         <TextView
             android:id="@+id/emailAddresse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/email_adresse"
             app:layout_constraintBottom_toTopOf="@+id/editEmailAddress"
             app:layout_constraintEnd_toEndOf="@+id/editEmailAddress"
@@ -38,7 +38,7 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/medium_spacing"
             android:text="@string/password"
             app:layout_constraintBottom_toTopOf="@+id/editPassword"
             app:layout_constraintEnd_toEndOf="@+id/editPassword"
@@ -63,7 +63,7 @@
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/large_spacing"
             android:text="@string/sign_in"
             app:layout_constraintBottom_toTopOf="@+id/registrationButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
             android:id="@+id/registrationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/medium_spacing"
             android:text="@string/sign_up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/loginButton"
