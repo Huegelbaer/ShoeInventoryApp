@@ -23,17 +23,18 @@
 
         <TextView
             android:id="@+id/instruction_text"
+            style="@style/RegularTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/instruction_text"
             app:layout_constraintBottom_toTopOf="@+id/continue_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction_title"
-            style="@style/RegularTextStyle"/>
+            app:layout_constraintTop_toBottomOf="@+id/instruction_title" />
 
         <Button
             android:id="@+id/continue_button"
+            style="@style/ButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large_spacing"
@@ -41,8 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction_text"
-            style="@style/ButtonStyle"/>
+            app:layout_constraintTop_toBottomOf="@+id/instruction_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

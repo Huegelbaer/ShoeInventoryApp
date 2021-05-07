@@ -27,10 +27,12 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.shoe_list_fragment,
             container,
-            false)
+            false
+        )
         binding.lifecycleOwner = this
 
         binding.floatingActionButton.setOnClickListener {
@@ -54,7 +56,8 @@ class ShoeListFragment : Fragment() {
                     navigateToDetails()
                     viewModel.onListEventCompleted()
                 }
-                else -> {}
+                else -> {
+                }
             }
         })
 

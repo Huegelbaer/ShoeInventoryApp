@@ -7,7 +7,6 @@
         <variable
             name="viewModel"
             type="com.udacity.shoestore.screens.welcome.WelcomeViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,21 +30,22 @@
 
         <TextView
             android:id="@+id/instruction_text"
+            style="@style/RegularTextStyle"
             android:text="@{viewModel.username}"
             app:layout_constraintBottom_toTopOf="@+id/continue_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/instruction_title"
-            tools:text="your name"
-            style="@style/RegularTextStyle" />
+            tools:text="your name" />
 
         <Button
             android:id="@+id/continue_button"
+            style="@style/ButtonStyle"
             android:text="@string/welcome_button_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction_text"
-            style="@style/ButtonStyle" />
+            app:layout_constraintTop_toBottomOf="@+id/instruction_text" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

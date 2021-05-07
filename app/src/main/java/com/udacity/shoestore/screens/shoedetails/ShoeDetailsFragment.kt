@@ -15,7 +15,7 @@ import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
 import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.screens.shoelist.ShoeViewModel
 
-class ShoeDetailsFragment: Fragment() {
+class ShoeDetailsFragment : Fragment() {
 
     private val viewModel: ShoeViewModel by activityViewModels()
     private lateinit var binding: ShoeDetailFragmentBinding
@@ -26,10 +26,12 @@ class ShoeDetailsFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.shoe_detail_fragment,
             container,
-            false)
+            false
+        )
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
@@ -48,7 +50,8 @@ class ShoeDetailsFragment: Fragment() {
                     handleError()
                     viewModel.onDetailsEventCompleted()
                 }
-                else -> {}
+                else -> {
+                }
             }
         })
 

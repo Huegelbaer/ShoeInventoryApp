@@ -11,7 +11,7 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListItemFragmentBinding
 import com.udacity.shoestore.models.Shoe
 
-class ShoeListItemFragment: Fragment() {
+class ShoeListItemFragment : Fragment() {
 
     private lateinit var viewModel: ShoeListItemViewModel
     private lateinit var binding: ShoeListItemFragmentBinding
@@ -22,10 +22,12 @@ class ShoeListItemFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.shoe_list_item_fragment,
             container,
-            false)
+            false
+        )
 
 /*
         val shoe = arguments?.getParcelable<Shoe>("shoe")

@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.LoginFragmentBinding
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
 
@@ -31,10 +31,12 @@ class LoginFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.login_fragment,
             container,
-            false)
+            false
+        )
 
         binding.lifecycleOwner = this
 
@@ -49,7 +51,7 @@ class LoginFragment: Fragment() {
             loginUser()
         }
 
-        binding.registrationButton.setOnClickListener{
+        binding.registrationButton.setOnClickListener {
             registerUser()
         }
 
@@ -82,7 +84,8 @@ class LoginFragment: Fragment() {
             LoginViewModel.AuthenficationState.FAILED -> {
                 handleAuthenficationFailed()
             }
-            else -> { }
+            else -> {
+            }
         }
     }
 

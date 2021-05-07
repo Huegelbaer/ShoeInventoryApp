@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class WelcomeViewModel(name: String): ViewModel() {
+class WelcomeViewModel(name: String) : ViewModel() {
 
     private var _username = MutableLiveData<String>(name)
     val username: LiveData<String>

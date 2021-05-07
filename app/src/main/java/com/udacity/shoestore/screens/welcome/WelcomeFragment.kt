@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.WelcomeFragmentBinding
 
-class WelcomeFragment: Fragment() {
+class WelcomeFragment : Fragment() {
 
     private lateinit var viewModel: WelcomeViewModel
     private lateinit var viewModelFactory: WelcomeViewModelFactory
@@ -25,10 +25,12 @@ class WelcomeFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.welcome_fragment,
             container,
-            false)
+            false
+        )
 
         val username = arguments?.getString("username") ?: "User"
 

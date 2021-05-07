@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.InstructionFragmentBinding
 
-class InstructionsFragment: Fragment() {
+class InstructionsFragment : Fragment() {
 
     private lateinit var binding: InstructionFragmentBinding
 
@@ -20,10 +20,12 @@ class InstructionsFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.instruction_fragment,
             container,
-            false)
+            false
+        )
 
         binding.continueButton.setOnClickListener {
             navigateToShoeList()
@@ -33,7 +35,8 @@ class InstructionsFragment: Fragment() {
     }
 
     private fun navigateToShoeList() {
-        val directions = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
+        val directions =
+            InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
         findNavController().navigate(directions)
     }
 }

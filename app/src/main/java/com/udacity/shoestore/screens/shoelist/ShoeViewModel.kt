@@ -3,7 +3,7 @@ package com.udacity.shoestore.screens.shoelist
 import androidx.lifecycle.*
 import com.udacity.shoestore.models.Shoe
 
-class ShoeViewModel: ViewModel() {
+class ShoeViewModel : ViewModel() {
 
     private val _selected = MutableLiveData<Shoe>()
 
@@ -30,8 +30,10 @@ class ShoeViewModel: ViewModel() {
         get() = _detailsEvent
 
     var selected: Shoe
-        set(value) { _selected.value = value }
-        get () = _selected.value!!
+        set(value) {
+            _selected.value = value
+        }
+        get() = _selected.value!!
 
     fun onAdd() {
         _selected.value = emptyShoe()

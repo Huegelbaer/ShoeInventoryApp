@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/medium_spacing">
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
@@ -18,7 +17,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/scrollView"
             app:srcCompat="@drawable/ic_add" />
-
 
         <ScrollView
             android:id="@+id/scrollView"

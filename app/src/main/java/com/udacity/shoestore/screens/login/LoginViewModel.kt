@@ -5,13 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
-class LoginViewModel: ViewModel() {
+class LoginViewModel : ViewModel() {
 
     enum class AuthenficationState {
         SUCCECCED, FAILED, NONE
     }
 
-    private var _eventAuthenfication = MutableLiveData<AuthenficationState>(AuthenficationState.NONE)
+    private var _eventAuthenfication =
+        MutableLiveData<AuthenficationState>(AuthenficationState.NONE)
     val eventAuthenfication: LiveData<AuthenficationState>
         get() = _eventAuthenfication
 
