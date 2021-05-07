@@ -40,7 +40,9 @@
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"
@@ -64,7 +66,9 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="shoe"
             app:argType="com.udacity.shoestore.models.Shoe" />
