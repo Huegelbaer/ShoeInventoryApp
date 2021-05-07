@@ -54,6 +54,7 @@ class WelcomeFragment: Fragment() {
     }
 
     private fun navigateToInstructions() {
-        findNavController().navigate(R.id.instructionsFragment)
+        val directions = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment()
+        findNavController().navigate(directions)
     }
 }

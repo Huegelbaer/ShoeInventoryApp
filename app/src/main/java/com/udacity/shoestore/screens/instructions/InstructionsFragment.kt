@@ -33,6 +33,7 @@ class InstructionsFragment: Fragment() {
     }
 
     private fun navigateToShoeList() {
-        findNavController().navigate(R.id.shoeListFragment)
+        val directions = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
+        findNavController().navigate(directions)
     }
 }

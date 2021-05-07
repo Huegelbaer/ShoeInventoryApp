@@ -23,4 +23,9 @@
     <string name="cancel_button">Cancel</string>
     <string name="save_button">Save</string>
     <string name="logout_title">Logout</string>
+    <string name="login_fragment_title">Login</string>
+    <string name="welcome_fragment_title">Welcome</string>
+    <string name="instructions_fragment_title">Instructions</string>
+    <string name="shoe_list_fragment_title">Shoe Inventory</string>
+    <string name="shoe_details_fragment_list">Describe the shoe</string>
 </resources>
