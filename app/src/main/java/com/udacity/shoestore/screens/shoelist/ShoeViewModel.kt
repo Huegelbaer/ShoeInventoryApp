@@ -7,6 +7,8 @@ class ShoeViewModel: ViewModel() {
 
     private val _selected = MutableLiveData<Shoe>()
 
+    private var _selectedIndex: Int = -1
+
     enum class ListEvent {
         CREATE, EDIT, NONE
     }
@@ -15,8 +17,8 @@ class ShoeViewModel: ViewModel() {
         CANCEL, SAVE, NONE
     }
 
-    private var _shoeList = MutableLiveData<List<Shoe>>(emptyShoeList())
-    val shoeList: LiveData<List<Shoe>>
+    private var _shoeList = MutableLiveData<ArrayList<Shoe>>(emptyShoeList())
+    val shoeList: LiveData<ArrayList<Shoe>>
         get() = _shoeList
 
     private var _listEvent = MutableLiveData<ListEvent>(ListEvent.NONE)
@@ -38,6 +40,7 @@ class ShoeViewModel: ViewModel() {
 
     fun onEdit(shoe: Shoe) {
         _selected.value = shoe
+        _selectedIndex = _shoeList.value?.indexOf(shoe) ?: -1
         _listEvent.value = ListEvent.EDIT
     }
 
@@ -46,8 +49,12 @@ class ShoeViewModel: ViewModel() {
     }
 
     fun onSave() {
-        val list = (_shoeList.value ?: emptyShoeList()).toMutableList()
-        list.add(selected)
+        val list = (_shoeList.value ?: emptyShoeList())
+        if (_selectedIndex < 0) {
+            list.add(selected)
+        } else {
+            list[_selectedIndex] = selected
+        }
         _shoeList.value = list
         _detailsEvent.value = DetailsEvent.SAVE
     }
@@ -60,8 +67,8 @@ class ShoeViewModel: ViewModel() {
         _detailsEvent.value = DetailsEvent.NONE
     }
 
-    private fun emptyShoeList(): List<Shoe> {
-        return emptyList<Shoe>()
+    private fun emptyShoeList(): ArrayList<Shoe> {
+        return ArrayList<Shoe>()
     }
 
     private fun emptyShoe(): Shoe {

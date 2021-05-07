@@ -77,8 +77,8 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun selectedListItem(shoe: Shoe) {
-        val directions = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(shoe)
-        findNavController().navigate(directions)
+        viewModel.selected = shoe
+        navigateToDetails()
     }
 
     private fun navigateToDetails() {
