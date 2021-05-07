@@ -16,4 +16,56 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="LargeHeadlineStyle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/large_headline_size</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="SubheadStyle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/subhead_text_size</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="RegularTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/large_spacing</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/regular_text_size</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="InputTextViewStyle">
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+    </style>
+
+    <style name="FootnoteStyle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="CancelButtonStyle" parent="Widget.AppCompat.Button.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="BorderlessButtonStyle" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
 </resources>

@@ -19,12 +19,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.name}"
-            android:textSize="@dimen/regular_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Shoe name" />
+            tools:text="Shoe name"
+            style="@style/RegularTextStyle" />
 
         <TextView
             android:id="@+id/shoe_description"
@@ -37,7 +37,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/shoe_title"
             app:layout_constraintTop_toBottomOf="@+id/shoe_title"
-            tools:text="Company name" />
+            tools:text="Company name"
+            style="@style/FootnoteStyle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

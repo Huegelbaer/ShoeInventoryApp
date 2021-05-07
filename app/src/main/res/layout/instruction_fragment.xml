@@ -17,7 +17,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintVertical_chainStyle="packed"
+            style="@style/LargeHeadlineStyle"/>
 
         <TextView
             android:id="@+id/instruction_text"
@@ -27,7 +28,8 @@
             app:layout_constraintBottom_toTopOf="@+id/continue_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction_title" />
+            app:layout_constraintTop_toBottomOf="@+id/instruction_title"
+            style="@style/RegularTextStyle"/>
 
         <Button
             android:id="@+id/continue_button"
@@ -38,7 +40,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction_text" />
+            app:layout_constraintTop_toBottomOf="@+id/instruction_text"
+            style="@style/ButtonStyle"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
