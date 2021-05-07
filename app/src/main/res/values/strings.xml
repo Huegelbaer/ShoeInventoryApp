@@ -22,6 +22,7 @@
     <string name="edit_description_hint">Enter description</string>
     <string name="cancel_button">Cancel</string>
     <string name="save_button">Save</string>
+    <string name="add_shoe_button_content_description">Add new Shoe to inventory</string>
     <string name="logout_title">Logout</string>
     <string name="login_fragment_title">Login</string>
     <string name="welcome_fragment_title">Welcome</string>

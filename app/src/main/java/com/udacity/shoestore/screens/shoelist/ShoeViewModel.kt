@@ -85,7 +85,7 @@ class ShoeViewModel : ViewModel() {
     }
 
     private fun emptyShoeList(): ArrayList<Shoe> {
-        return ArrayList<Shoe>()
+        return ArrayList()
     }
 
     private fun emptyShoe(): Shoe {

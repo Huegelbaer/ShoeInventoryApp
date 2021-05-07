@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListItemFragmentBinding
-import com.udacity.shoestore.models.Shoe
 
 class ShoeListItemFragment : Fragment() {
 
@@ -20,7 +19,7 @@ class ShoeListItemFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(
             inflater,

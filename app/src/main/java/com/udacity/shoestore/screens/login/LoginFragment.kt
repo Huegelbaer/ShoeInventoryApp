@@ -29,7 +29,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -43,8 +43,8 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(this, defaultViewModelProviderFactory)
             .get(LoginViewModel::class.java)
 
-        viewModel.eventAuthenfication.observe(viewLifecycleOwner, Observer { state ->
-            handleAuthenficationChanged(state)
+        viewModel.eventAuthentication.observe(viewLifecycleOwner, Observer { state ->
+            handleAuthenticationChanged(state)
         })
 
         binding.loginButton.setOnClickListener {
@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
         val item = menu.findItem(R.id.logout_button)
-        item?.setVisible(false)
+        item?.isVisible = false
     }
 
     private fun loginUser() {
@@ -76,28 +76,28 @@ class LoginFragment : Fragment() {
         viewModel.registerUser(username, password)
     }
 
-    private fun handleAuthenficationChanged(state: LoginViewModel.AuthenficationState) {
+    private fun handleAuthenticationChanged(state: LoginViewModel.AuthenticationState) {
         when (state) {
-            LoginViewModel.AuthenficationState.SUCCECCED -> {
-                handleAuthenficationSucceded()
+            LoginViewModel.AuthenticationState.SUCCEEDED -> {
+                handleAuthenticationSucceeded()
             }
-            LoginViewModel.AuthenficationState.FAILED -> {
-                handleAuthenficationFailed()
+            LoginViewModel.AuthenticationState.FAILED -> {
+                handleAuthenticationFailed()
             }
             else -> {
             }
         }
     }
 
-    private fun handleAuthenficationSucceded() {
+    private fun handleAuthenticationSucceeded() {
         binding.errorLabel.visibility = View.GONE
         navigateToWelcome()
-        viewModel.onAuthenficationCompleted()
+        viewModel.onAuthenticationCompleted()
     }
 
-    private fun handleAuthenficationFailed() {
+    private fun handleAuthenticationFailed() {
         binding.errorLabel.visibility = View.VISIBLE
-        viewModel.onAuthenficationCompleted()
+        viewModel.onAuthenticationCompleted()
     }
 
     private fun navigateToWelcome() {
