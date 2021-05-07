@@ -5,8 +5,7 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoeViewModel: ViewModel() {
 
-    //var selected = MutableLiveData<Shoe>()
-    var selected: Shoe = emptyShoe()
+    private val _selected = MutableLiveData<Shoe>()
 
     enum class ListEvent {
         CREATE, EDIT, NONE
@@ -28,14 +27,17 @@ class ShoeViewModel: ViewModel() {
     val detailsEvent: LiveData<DetailsEvent>
         get() = _detailsEvent
 
+    var selected: Shoe
+        set(value) { _selected.value = value }
+        get () = _selected.value!!
 
     fun onAdd() {
-        selected = emptyShoe()
+        _selected.value = emptyShoe()
         _listEvent.value = ListEvent.CREATE
     }
 
     fun onEdit(shoe: Shoe) {
-        selected = shoe
+        _selected.value = shoe
         _listEvent.value = ListEvent.EDIT
     }
 

@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.screens.shoelist.ShoeViewModel
 
 class ShoeDetailsFragment: Fragment() {
@@ -45,6 +46,15 @@ class ShoeDetailsFragment: Fragment() {
                 else -> {}
             }
         })
+
+        binding.saveButton.setOnClickListener {
+            val name = binding.editShoeName.text.toString()
+            val company = binding.editCompanyName.text.toString()
+            val size = binding.editShoeSize.text.toString().toDouble()
+            val description = binding.editDescription.text.toString()
+            viewModel.selected = Shoe(name, size, company, description)
+            viewModel.onSave()
+        }
 
         return binding.root
     }
