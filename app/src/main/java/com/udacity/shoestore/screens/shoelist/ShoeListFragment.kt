@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
+import com.udacity.shoestore.databinding.ShoeListItemFragmentBinding
 import com.udacity.shoestore.models.Shoe
 
 class ShoeListFragment : Fragment() {
@@ -68,14 +69,14 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun addListItem(shoe: Shoe) {
-        val subView = TextView(context)
-        subView.text = shoe.name
+        val itemBinding = ShoeListItemFragmentBinding.inflate(layoutInflater)
+        itemBinding.shoeModel = shoe
 
-        subView.setOnClickListener {
+        itemBinding.root.setOnClickListener {
             selectedListItem(shoe)
         }
-
-        binding.linearLayout.addView(subView)
+        
+        binding.linearLayout.addView(itemBinding.root)
     }
 
     private fun selectedListItem(shoe: Shoe) {
