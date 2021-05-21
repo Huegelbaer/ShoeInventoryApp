@@ -1,9 +1,7 @@
 package com.udacity.shoestore.screens.shoelist
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -19,12 +17,6 @@ class ShoeListFragment : Fragment() {
     private val viewModel: ShoeViewModel by activityViewModels()
 
     private lateinit var binding: ShoeListFragmentBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setHasOptionsMenu(true)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,6 +57,8 @@ class ShoeListFragment : Fragment() {
                 }
             }
         })
+
+        setHasOptionsMenu(true)
 
         return binding.root
     }
