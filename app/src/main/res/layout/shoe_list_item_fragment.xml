@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <data>
+
         <variable
             name="shoeModel"
             type="com.udacity.shoestore.models.Shoe" />
@@ -20,51 +21,28 @@
             android:layout_margin="@dimen/small_spacing">
 
             <TextView
-                android:id="@+id/shoe_title_header"
-                style="@style/RegularTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/shoe_name"
-                app:layout_constraintEnd_toStartOf="@+id/shoe_title"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/shoe_title"
+                android:id="@+id/shoe_name"
                 style="@style/RegularTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{shoeModel.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/company_name"
-                app:layout_constraintTop_toTopOf="@+id/shoe_title_header"
-                tools:text="Shoe name" />
-
-            <TextView
-                android:id="@+id/company_header"
-                style="@style/RegularTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_spacing"
-                android:text="@string/company_name"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_title_header" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Shoe name" />
 
             <TextView
                 android:id="@+id/company_name"
                 style="@style/FootnoteStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/small_spacing"
                 android:text="@{shoeModel.company}"
-                app:layout_constraintBottom_toBottomOf="@+id/company_header"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/company_header"
-                app:layout_constraintTop_toTopOf="@+id/company_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_name"
                 tools:text="Company name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
