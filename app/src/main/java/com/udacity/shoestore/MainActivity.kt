@@ -27,13 +27,23 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         val navController = getNavController()
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        val appBarConfiguration = AppBarConfiguration
+            // Define top level destinations to hide navigation up button
+            .Builder(
+                R.id.loginFragment,
+                R.id.welcomeFragment,
+                R.id.shoeListFragment
+            )
+            .build()
 
         val toolbar: Toolbar = binding.toolbar
         toolbar.setupWithNavController(navController, appBarConfiguration)
         setSupportActionBar(toolbar)
 
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        NavigationUI.setupActionBarWithNavController(this,
+            navController,
+            appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
