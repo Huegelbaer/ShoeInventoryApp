@@ -10,19 +10,26 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.udacity.shoestore.databinding.ActivityMainBinding
+import androidx.databinding.DataBindingUtil
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
+
+        binding = DataBindingUtil.setContentView(
+                this, R.layout.activity_main)
+        binding.lifecycleOwner = this
 
         val navController = getNavController()
         val appBarConfiguration = AppBarConfiguration(navController.graph)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = binding.toolbar
         toolbar.setupWithNavController(navController, appBarConfiguration)
         setSupportActionBar(toolbar)
 
