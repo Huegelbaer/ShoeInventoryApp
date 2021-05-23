@@ -94,8 +94,7 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun selectedListItem(shoe: Shoe) {
-        viewModel.selected = shoe
-        navigateToDetails()
+        viewModel.onEdit(shoe)
     }
 
     private fun navigateToDetails() {
