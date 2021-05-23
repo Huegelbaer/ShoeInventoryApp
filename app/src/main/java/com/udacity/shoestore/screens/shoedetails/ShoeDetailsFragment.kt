@@ -67,10 +67,9 @@ class ShoeDetailsFragment : Fragment() {
         binding.apply {
             val name = editShoeName.text.toString()
             val company = editCompanyName.text.toString()
-            val size = editShoeSize.text.toString().toDouble()
+            val size = editShoeSize.text.toString().toDoubleOrNull()
             val description = editDescription.text.toString()
-            viewModel?.selected = Shoe(name, size, company, description)
-            viewModel?.onSave()
+            viewModel?.onSave(name, size, company, description)
         }
     }
 
