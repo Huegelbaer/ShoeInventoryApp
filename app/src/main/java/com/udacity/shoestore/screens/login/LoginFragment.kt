@@ -37,7 +37,7 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(this, defaultViewModelProviderFactory)
             .get(LoginViewModel::class.java)
 
-        viewModel.eventAuthentication.observe(viewLifecycleOwner, Observer { state ->
+        viewModel.eventAuthentication.observe(viewLifecycleOwner,  { state ->
             handleAuthenticationChanged(state)
         })
 

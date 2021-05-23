@@ -36,7 +36,7 @@ class ShoeDetailsFragment : Fragment() {
         binding.shoe = viewModel.selected
         binding.lifecycleOwner = this
 
-        viewModel.detailsEvent.observe(viewLifecycleOwner, Observer { event ->
+        viewModel.detailsEvent.observe(viewLifecycleOwner, { event ->
             when (event) {
                 ShoeViewModel.DetailsEvent.SAVE -> {
                     navigateToList()

@@ -15,15 +15,15 @@ class ShoeViewModel : ViewModel() {
         CANCEL, SAVE, ERROR, NONE
     }
 
-    private var _shoeList = MutableLiveData<ArrayList<Shoe>>(emptyShoeList())
+    private var _shoeList = MutableLiveData(emptyShoeList())
     val shoeList: LiveData<ArrayList<Shoe>>
         get() = _shoeList
 
-    private var _listEvent = MutableLiveData<ListEvent>(ListEvent.NONE)
+    private var _listEvent = MutableLiveData(ListEvent.NONE)
     val listEvent: LiveData<ListEvent>
         get() = _listEvent
 
-    private var _detailsEvent = MutableLiveData<DetailsEvent>(DetailsEvent.NONE)
+    private var _detailsEvent = MutableLiveData(DetailsEvent.NONE)
     val detailsEvent: LiveData<DetailsEvent>
         get() = _detailsEvent
 

@@ -41,7 +41,7 @@ class WelcomeFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        viewModel.eventContinue.observe(viewLifecycleOwner, Observer { shouldContinue ->
+        viewModel.eventContinue.observe(viewLifecycleOwner, { shouldContinue ->
             if (shouldContinue) {
                 navigateToInstructions()
                 viewModel.onContinueCompleted()

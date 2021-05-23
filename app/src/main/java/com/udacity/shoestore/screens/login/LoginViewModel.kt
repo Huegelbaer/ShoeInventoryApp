@@ -11,7 +11,7 @@ class LoginViewModel : ViewModel() {
     }
 
     private var _eventAuthentication =
-        MutableLiveData<AuthenticationState>(AuthenticationState.NONE)
+        MutableLiveData(AuthenticationState.NONE)
     val eventAuthentication: LiveData<AuthenticationState>
         get() = _eventAuthentication
 

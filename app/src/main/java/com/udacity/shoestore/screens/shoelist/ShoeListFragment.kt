@@ -36,14 +36,14 @@ class ShoeListFragment : Fragment() {
             viewModel.onAdd()
         }
 
-        viewModel.shoeList.observe(viewLifecycleOwner, Observer {
+        viewModel.shoeList.observe(viewLifecycleOwner, {
             removeAllListItems()
             for (shoe in it) {
                 addListItem(shoe)
             }
         })
 
-        viewModel.listEvent.observe(viewLifecycleOwner, Observer {
+        viewModel.listEvent.observe(viewLifecycleOwner, {
             when (it) {
                 ShoeViewModel.ListEvent.CREATE -> {
                     navigateToDetails()
