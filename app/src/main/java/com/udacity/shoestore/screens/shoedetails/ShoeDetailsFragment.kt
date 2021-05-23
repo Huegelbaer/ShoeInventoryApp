@@ -37,10 +37,6 @@ class ShoeDetailsFragment : Fragment() {
         binding.shoe = viewModel.selected
         binding.lifecycleOwner = this
 
-        binding.saveButton.setOnClickListener {
-            onSave()
-        }
-
         viewModel.detailsEvent.observe(viewLifecycleOwner, Observer { event ->
             when (event) {
                 ShoeViewModel.DetailsEvent.SAVE -> {
@@ -61,16 +57,6 @@ class ShoeDetailsFragment : Fragment() {
         })
 
         return binding.root
-    }
-
-    fun onSave() {
-        binding.apply {
-            val name = editShoeName.text.toString()
-            val company = editCompanyName.text.toString()
-            val size = editShoeSize.text.toString().toDoubleOrNull()
-            val description = editDescription.text.toString()
-            viewModel?.onSave(name, size, company, description)
-        }
     }
 
     private fun navigateToList() {

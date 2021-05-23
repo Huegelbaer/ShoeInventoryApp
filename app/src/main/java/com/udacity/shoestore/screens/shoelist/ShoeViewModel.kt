@@ -5,10 +5,6 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoeViewModel : ViewModel() {
 
-    private val _selected = MutableLiveData<Shoe>()
-
-    private var _selectedIndex: Int = -1
-
     enum class ListEvent {
         CREATE, EDIT, NONE
     }
@@ -29,11 +25,14 @@ class ShoeViewModel : ViewModel() {
     val detailsEvent: LiveData<DetailsEvent>
         get() = _detailsEvent
 
+    private val _selected = MutableLiveData<Shoe>()
     var selected: Shoe
+        get() = _selected.value!!
         set(value) {
             _selected.value = value
         }
-        get() = _selected.value!!
+
+    private var _selectedIndex: Int = -1
 
     fun onAdd() {
         _selected.value = emptyShoe()
@@ -50,12 +49,11 @@ class ShoeViewModel : ViewModel() {
         _listEvent.value = ListEvent.NONE
     }
 
-    fun onSave(name: String, size: Double?, company: String, description: String) {
-        if (!isShoeDataValid(name, size, company, description)) {
+    fun onSave() {
+        if (!isShoeDataValid()) {
             _detailsEvent.value = DetailsEvent.ERROR
             return
         }
-        selected = Shoe(name, size!!, company, description)
         updateList()
         _detailsEvent.value = DetailsEvent.SAVE
     }
@@ -68,8 +66,8 @@ class ShoeViewModel : ViewModel() {
         _detailsEvent.value = DetailsEvent.NONE
     }
 
-    private fun isShoeDataValid(name: String, size: Double?, company: String, description: String): Boolean {
-        if (name.isEmpty()|| size == null || company.isEmpty()  || description.isEmpty()) {
+    private fun isShoeDataValid(): Boolean {
+        if (selected.name.isEmpty()|| selected.size.isNaN() || selected.company.isEmpty()  || selected.description.isEmpty()) {
             return false
         }
         return true
