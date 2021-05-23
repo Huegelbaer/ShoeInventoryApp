@@ -2,7 +2,6 @@ package com.udacity.shoestore.screens.welcome
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import kotlin.IllegalArgumentException
 
 class WelcomeViewModelFactory(private val username: String) : ViewModelProvider.Factory {
 
