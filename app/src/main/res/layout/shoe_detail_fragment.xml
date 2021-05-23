@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
         <variable
             name="viewModel"
             type="com.udacity.shoestore.screens.shoelist.ShoeViewModel" />
@@ -34,7 +36,7 @@
             android:hint="@string/edit_shoe_name_hint"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:text="@{viewModel.selected.name}"
+            android:text="@{shoe.name}"
             app:layout_constraintBottom_toTopOf="@+id/editCompanyName"
             app:layout_constraintEnd_toEndOf="@+id/editCompanyName"
             app:layout_constraintStart_toStartOf="@+id/editCompanyName"
@@ -62,7 +64,7 @@
             android:hint="@string/edit_company_name_hint"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:text="@{viewModel.selected.company}"
+            android:text="@{shoe.company}"
             app:layout_constraintBottom_toTopOf="@+id/editShoeSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/company_name"
@@ -90,7 +92,7 @@
             android:hint="@string/edit_shoe_size_hint"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:text="@{`` + viewModel.selected.size}"
+            android:text="@{`` + shoe.size}"
             app:layout_constraintBottom_toTopOf="@+id/editDescription"
             app:layout_constraintEnd_toEndOf="@+id/editCompanyName"
             app:layout_constraintStart_toStartOf="@+id/editCompanyName"
@@ -118,7 +120,7 @@
             android:hint="@string/edit_description_hint"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:text="@{viewModel.selected.description}"
+            android:text="@{shoe.description}"
             app:layout_constraintBottom_toTopOf="@+id/save_button"
             app:layout_constraintEnd_toEndOf="@+id/editShoeSize"
             app:layout_constraintStart_toStartOf="@+id/editShoeSize"

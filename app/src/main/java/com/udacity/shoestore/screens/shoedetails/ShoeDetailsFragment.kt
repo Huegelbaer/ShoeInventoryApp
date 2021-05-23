@@ -34,7 +34,12 @@ class ShoeDetailsFragment : Fragment() {
         )
 
         binding.viewModel = viewModel
+        binding.shoe = viewModel.selected
         binding.lifecycleOwner = this
+
+        binding.saveButton.setOnClickListener {
+            onSave()
+        }
 
         viewModel.detailsEvent.observe(viewLifecycleOwner, Observer { event ->
             when (event) {
@@ -55,16 +60,18 @@ class ShoeDetailsFragment : Fragment() {
             }
         })
 
-        binding.saveButton.setOnClickListener {
-            val name = binding.editShoeName.text.toString()
-            val company = binding.editCompanyName.text.toString()
-            val size = binding.editShoeSize.text.toString().toDouble()
-            val description = binding.editDescription.text.toString()
-            viewModel.selected = Shoe(name, size, company, description)
-            viewModel.onSave()
-        }
-
         return binding.root
+    }
+
+    fun onSave() {
+        binding.apply {
+            val name = editShoeName.text.toString()
+            val company = editCompanyName.text.toString()
+            val size = editShoeSize.text.toString().toDouble()
+            val description = editDescription.text.toString()
+            viewModel?.selected = Shoe(name, size, company, description)
+            viewModel?.onSave()
+        }
     }
 
     private fun navigateToList() {
