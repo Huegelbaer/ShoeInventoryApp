@@ -11,6 +11,9 @@
             type="com.udacity.shoestore.screens.shoelist.ShoeViewModel" />
     </data>
 
+    <!-- I choose constraint layout to have a flat view hierarchy.
+    With LinearLayout, the two-column layout would cause a complex view hierarchy. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

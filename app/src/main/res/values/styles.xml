@@ -31,7 +31,6 @@
     <style name="RegularTextStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/large_spacing</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">@dimen/regular_text_size</item>
         <item name="android:textColor">@color/textColorPrimary</item>
