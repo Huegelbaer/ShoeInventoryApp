@@ -69,7 +69,7 @@ class ShoeViewModel : ViewModel() {
     }
 
     private fun isShoeDataValid(): Boolean {
-        if (selected.name.isEmpty()|| selected.size.isNaN() || selected.company.isEmpty()  || selected.description.isEmpty()) {
+        if (selected.name.isEmpty()|| selected.size.isNaN() || selected.size == 0.0 || selected.company.isEmpty()  || selected.description.isEmpty()) {
             return false
         }
         return true

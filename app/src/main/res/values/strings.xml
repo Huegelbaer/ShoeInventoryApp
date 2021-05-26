@@ -31,4 +31,5 @@
     <string name="shoe_details_fragment_list">Describe the shoe</string>
     <string name="login_error">Login failed. \nE-mail address or password is wrong.</string>
     <string name="shoe_details_empty_input_error">Should not be empty</string>
+    <string name="shoe_details_invalid_shoe_size_error">Shoe size must be greater than 0</string>
 </resources>

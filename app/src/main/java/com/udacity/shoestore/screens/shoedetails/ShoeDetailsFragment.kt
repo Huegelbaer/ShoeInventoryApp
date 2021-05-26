@@ -65,7 +65,7 @@ class ShoeDetailsFragment : Fragment() {
     private fun handleError() {
         setErrorIfEmpty(binding.editShoeName)
         setErrorIfEmpty(binding.editCompanyName)
-        setErrorIfEmpty(binding.editShoeSize)
+        setErrorIfInvalidNumber(binding.editShoeSize)
         setErrorIfEmpty(binding.editDescription)
     }
 
@@ -74,6 +74,22 @@ class ShoeDetailsFragment : Fragment() {
             editView.error = getString(R.string.shoe_details_empty_input_error)
         } else {
             editView.error = null
+        }
+    }
+
+    private fun setErrorIfInvalidNumber(editView: EditText) {
+        val input = editView.text.toString().toDoubleOrNull()
+
+        when {
+            input?.isNaN() != false -> {
+                editView.error = getString(R.string.shoe_details_empty_input_error)
+            }
+            input == 0.0 -> {
+                editView.error = getString(R.string.shoe_details_invalid_shoe_size_error)
+            }
+            else -> {
+                editView.error = null
+            }
         }
     }
 }
