@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Inventory App</string>
+    <string name="email_address">E-mail Address</string>
+    <string name="enter_email_address">Enter E-mail Address</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_button_title">Next</string>
+    <string name="instruction_title">Instructions</string>
+    <string name="instruction_text">You can add new shoes to your inventory with the add button. \nClick on a shoe in the list to edit it. \nYou can log out using the menu at the top right.
+\n\nNow click on start to get started.</string>
+    <string name="instruction_button_title">Start</string>
+    <string name="shoe_name">Shoe name</string>
+    <string name="edit_shoe_name_hint">Enter shoe name</string>
+    <string name="company_name">Company name</string>
+    <string name="edit_company_name_hint">Enter company name</string>
+    <string name="shoe_size">Shoe size</string>
+    <string name="edit_shoe_size_hint">Enter shoe size</string>
+    <string name="description">Description</string>
+    <string name="edit_description_hint">Enter description</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+    <string name="add_shoe_button_content_description">Add new Shoe to inventory</string>
+    <string name="logout_title">Logout</string>
+    <string name="login_fragment_title">Login</string>
+    <string name="welcome_fragment_title">Welcome</string>
+    <string name="instructions_fragment_title">Instructions</string>
+    <string name="shoe_list_fragment_title">Shoe Inventory</string>
+    <string name="shoe_details_fragment_list">Describe the shoe</string>
+    <string name="login_error">Login failed. \nE-mail address or password is wrong.</string>
+    <string name="shoe_details_empty_input_error">Should not be empty</string>
+    <string name="shoe_details_invalid_shoe_size_error">Shoe size must be greater than 0</string>
 </resources>
