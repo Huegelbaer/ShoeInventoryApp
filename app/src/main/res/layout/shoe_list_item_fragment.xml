@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoeModel"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_spacing">
+
+        <!-- I choose LinearLayout for a simple vertical layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_spacing"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shoe_name"
+                style="@style/RegularTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{shoeModel.name}"
+                tools:text="Shoe name" />
+
+            <TextView
+                android:id="@+id/company_name"
+                style="@style/FootnoteStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{shoeModel.company}"
+                tools:text="Company" />
+
+            <TextView
+                android:id="@+id/shoe_size"
+                style="@style/FootnoteStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`` + shoeModel.size}"
+                tools:text="Shoe size" />
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/FootnoteStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{shoeModel.description}"
+                tools:text="Description" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
